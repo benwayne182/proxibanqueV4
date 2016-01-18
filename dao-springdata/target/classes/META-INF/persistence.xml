@@ -1,0 +1,25 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+
+	<persistence-unit name="myUnit" transaction-type="RESOURCE_LOCAL">
+	
+		<class>fr.gtm.proxibanquev4.domaine.Client</class>
+		<class>fr.gtm.proxibanquev4.domaine.Conseiller</class>
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<properties>
+
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+
+			<property name="hibernate.show_sql" value="true" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+
+			<!-- <property name="packagesToScan" value="repositories" /> -->
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
