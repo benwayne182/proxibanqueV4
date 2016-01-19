@@ -6,15 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * Classe client. La classe client hérite des attributs d'une personne (nom, prénom, id).
+ * Représente un client. 
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 @Entity
 public class Client extends Personne{
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private int id;
-//	
-//	private String nom;
-//	private String prenom;
+	/**
+	 * Attributs spécifiques de la classe Client : adresse, codePostal, ville, tel, email
+	 * Ces attributs s'ajoutent aux attributs hérités de la classe Personne : id, nom, prenom
+	 */
 	private String adresse;
 	private int codePostal;
 	private String ville;
@@ -24,40 +28,26 @@ public class Client extends Personne{
 	@ManyToOne
 	private Conseiller conseiller;
 	
+	/**
+	 * Constructeur vide de la classe Client
+	 */
 	public Client() {
 		super();
 	}
 
+	/**
+	 * Constructeur avec paramètres de la classe Client
+	 * @param nom
+	 * @param prenom
+	 */
 	public Client(String nom, String prenom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
-//	public int getId() {
-//		return id;
-//	}
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-//
-//	public String getNom() {
-//		return nom;
-//	}
-//
-//	public void setNom(String nom) {
-//		this.nom = nom;
-//	}
-//
-//	public String getPrenom() {
-//		return prenom;
-//	}
-//
-//	public void setPrenom(String prenom) {
-//		this.prenom = prenom;
-//	}
 
+	//Getters et setters de la classe Client
 	public String getAdresse() {
 		return adresse;
 	}
@@ -96,6 +86,14 @@ public class Client extends Personne{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
 	}
 	
 	

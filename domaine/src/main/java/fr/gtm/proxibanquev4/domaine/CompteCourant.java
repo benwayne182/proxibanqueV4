@@ -1,9 +1,20 @@
 package fr.gtm.proxibanquev4.domaine;
 
+/**
+ * Classe CompteCourant, hérite de la classe abstraite Compte
+ * Représente un compte courant détenu par un client
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 public class CompteCourant extends Compte {
-	
+
+	/**
+	 * Attribut spécifique de la classe CompteCourant : decouvertAutorisé
+	 * Cet attribut s'ajoute à ceux hérités de la classe Compte : id, solde et client
+	 */
 	private float decouvertAutorise;
 
+	//getters et setters
 	public float getDecouvertAutorise() {
 		return decouvertAutorise;
 	}
@@ -12,12 +23,15 @@ public class CompteCourant extends Compte {
 		this.decouvertAutorise = decouvertAutorise;
 	}
 
+	/**
+	 * Constructeur vide de la classe CompteCourant
+	 */
 	public CompteCourant() {
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 
 }
