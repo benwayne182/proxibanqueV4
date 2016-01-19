@@ -4,15 +4,19 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import fr.gtm.proxibanquev4.dao_springdata.IClientDao;
+import fr.gtm.proxibanquev4.dao_springdata.client.IClientDao;
+import fr.gtm.proxibanquev4.dao_springdata.conseiller.IConseillerDao;
 import fr.gtm.proxibanquev4.domaine.Client;
+import fr.gtm.proxibanquev4.domaine.Conseiller;
 import junit.framework.TestCase;
 
 public class TestClientDao extends TestCase {
 	
 	private Client client;
+	private Conseiller conseiller;
 	private ClassPathXmlApplicationContext appContext;
 	private IClientDao clientdao;
+	private IConseillerDao conseillerdao;
 	
 	@Override
 	protected void setUp() throws Exception {
@@ -21,9 +25,12 @@ public class TestClientDao extends TestCase {
 		appContext = new ClassPathXmlApplicationContext("spring/application-config.xml");
 
 		clientdao = (IClientDao) appContext.getBean("clientdao");
+		conseillerdao = (IConseillerDao) appContext.getBean("conseillerdao");
 	}
 	
 	public void testAddClient() {
+		conseiller = conseillerdao.readConseillerById(1);
+		client.setConseiller(conseiller);
 		clientdao.addClient(client);
 	}
 	
