@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import fr.gtm.proxibanquev4.dao_springdata.IClientDao;
+import fr.gtm.proxibanquev4.dao_springdata.client.IClientDao;
 import fr.gtm.proxibanquev4.dao_springdata.conseiller.IConseillerDao;
 import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
@@ -55,6 +55,12 @@ public class TestClientDao extends TestCase {
 	
 	public void testReadClientByNom() {
 		List<Client> listeClient = clientdao.readClientByNom(client.getNom());
+		assertNotNull(listeClient);
+	}
+	
+	public void testReadClientByConseiller() {
+		conseiller = conseillerdao.readConseillerById(1);
+		List<Client> listeClient = clientdao.readClientByConseiller(conseiller);
 		assertNotNull(listeClient);
 	}
 
