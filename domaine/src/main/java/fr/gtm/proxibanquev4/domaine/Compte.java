@@ -1,5 +1,11 @@
 package fr.gtm.proxibanquev4.domaine;
 
+
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  * Classe abstraite Compte
  * Représente un compte en banque détenu par un client.
@@ -7,6 +13,10 @@ package fr.gtm.proxibanquev4.domaine;
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
+
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE_COMPTE")
 public abstract class Compte {
 	
 	/**

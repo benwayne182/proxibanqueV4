@@ -1,11 +1,16 @@
 package fr.gtm.proxibanquev4.domaine;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 /**
  * Classe CompteCourant, hérite de la classe abstraite Compte
  * Représente un compte courant détenu par un client
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
+@Entity
+@DiscriminatorValue("CCourant")
 public class CompteCourant extends Compte {
 
 	/**
