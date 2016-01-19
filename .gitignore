@@ -49,3 +49,5 @@ Temporary Items
 #config files
 .tern-project
 faces-config.pageflow
+pom.properties
+MANIFEST.MF
