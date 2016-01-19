@@ -5,6 +5,7 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 /**
  * Classe abstraite Compte
@@ -24,6 +25,7 @@ public abstract class Compte {
 	 */
 	protected int id;
 	protected float solde;
+	@ManyToOne
 	protected Client client;
 	
 	
