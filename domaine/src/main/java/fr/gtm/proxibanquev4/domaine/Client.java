@@ -1,10 +1,14 @@
 package fr.gtm.proxibanquev4.domaine;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Classe client. La classe client hérite des attributs d'une personne (nom, prénom, id).
@@ -27,6 +31,9 @@ public class Client extends Personne{
 	
 	@ManyToOne
 	private Conseiller conseiller;
+	
+	@OneToMany (mappedBy = "client"  , cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	private List<Compte> listeComptes;
 	
 	/**
 	 * Constructeur vide de la classe Client

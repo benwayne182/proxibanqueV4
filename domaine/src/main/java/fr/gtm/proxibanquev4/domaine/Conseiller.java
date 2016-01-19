@@ -23,7 +23,7 @@ public class Conseiller extends User{
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
 	 * Elle hérite des attributs d'un User : id, nom, prenom, login, password
 	 */
-	@OneToMany(mappedBy="conseiller",cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	Collection<Client> listeClients = new ArrayList<Client>();
 	
 	/**

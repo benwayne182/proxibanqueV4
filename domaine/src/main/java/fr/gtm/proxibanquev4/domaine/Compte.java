@@ -3,6 +3,9 @@ package fr.gtm.proxibanquev4.domaine;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
@@ -16,17 +19,20 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="TYPE_COMPTE")
 public abstract class Compte {
 	
 	/**
 	 * Attributs spécifiques à la classe abstraite Compte : id, solde et client
 	 */
-	protected int id;
-	protected float solde;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private float solde;
+	
 	@ManyToOne
-	protected Client client;
+	private Client client;
 	
 	
 	//getters et setters
@@ -53,12 +59,5 @@ public abstract class Compte {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
-
-
-
-
-
-
 
 }
