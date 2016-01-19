@@ -2,8 +2,8 @@ package fr.gtm.proxibanquev4.domaine;
 
 public abstract class User extends Personne{
 	
-	private String login;
-	private String password;
+	protected String login;
+	protected String password;
 	public String getLogin() {
 		return login;
 	}
