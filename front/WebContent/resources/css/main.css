@@ -7,3 +7,8 @@
 	margin: 0; padding : 0;
 	padding: 0;
 }
+
+#page_erreur{
+	text-align: center;
+	font-size: 80px;
+}
