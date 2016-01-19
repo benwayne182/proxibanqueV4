@@ -47,11 +47,20 @@ public abstract class Personne {
 		this.id = id;
 	}
 	
+	/**
+	 * Constructeur à paramètres de la classe abstraite Personne
+	 * @param nom
+	 * @param prenom
+	 */
 	public Personne(String nom, String prenom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
+	
+	/**
+	 * Constructeur vide de la classe abstraite Personne
+	 */
 	public Personne() {
 		
 	}
