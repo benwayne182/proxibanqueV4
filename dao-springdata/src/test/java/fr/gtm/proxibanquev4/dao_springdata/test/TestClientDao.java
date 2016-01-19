@@ -1,13 +1,14 @@
-package fr.gtm.proxibanquev4.dao_springdata;
+package fr.gtm.proxibanquev4.dao_springdata.test;
 
 import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import fr.gtm.proxibanquev4.dao_springdata.IClientDao;
 import fr.gtm.proxibanquev4.domaine.Client;
 import junit.framework.TestCase;
 
-public class TestDao extends TestCase {
+public class TestClientDao extends TestCase {
 	
 	private Client client;
 	private ClassPathXmlApplicationContext appContext;
@@ -22,31 +23,31 @@ public class TestDao extends TestCase {
 		clientdao = (IClientDao) appContext.getBean("clientdao");
 	}
 	
-	public void testCreate() {
-		clientdao.create(client);
+	public void testAddClient() {
+		clientdao.addClient(client);
 	}
 	
-	public void testFindById() {
-		Client client = clientdao.findById(1);
+	public void testReadClientById() {
+		Client client = clientdao.readClientById(1);
 		assertNotNull(client);
 	}
 	
-	public void testDelete() {
-		clientdao.delete(10);
+	public void testDeleteClient() {
+		clientdao.deleteClient(10);
 	}
 	
-	public void testUpdate() {
+	public void testUpdateClient() {
 		client.setId(1);
-		clientdao.update(client);
+		clientdao.updateClient(client);
 	}
 	
-	public void testFindAll() {
-		List<Client> listeClient = clientdao.findAll();
+	public void testReadAllClients() {
+		List<Client> listeClient = clientdao.readAllClients();
 		assertNotNull(listeClient);
 	}
 	
-	public void testFindByNom() {
-		List<Client> listeClient = clientdao.findByNom(client.getNom());
+	public void testReadClientByNom() {
+		List<Client> listeClient = clientdao.readClientByNom(client.getNom());
 		assertNotNull(listeClient);
 	}
 
