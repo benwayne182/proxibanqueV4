@@ -29,11 +29,17 @@ public class Conseiller {
 		super();
 	}
 
-	public int getIdcn() {
+	public Conseiller(String nom, String prenom) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+	}
+
+	public int getId() {
 		return id;
 	}
 
-	public void setIdcn(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
