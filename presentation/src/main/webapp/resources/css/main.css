@@ -19,3 +19,7 @@
     border: 5px solid gray;
     margin: 80px;
 }
+
+#content{
+	height: 80%;
+}
