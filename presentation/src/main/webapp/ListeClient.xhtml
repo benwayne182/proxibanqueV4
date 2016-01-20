@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Liste de client</title>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navDirecteur"></ui:define>
+		<ui:define name="content">
+		<h2>Liste de Client</h2>
+		<h:form id="form1">
+			<p:growl id="msgs" showDetail="true" />
+				<p:dataTable id="matableCli" var="Client" value="#{ConseillerBean.listClient}"
+					selection="#{ConseillerBean.selectClient}" selectionMode="single"
+					rowKey="#{Client.id}" first="#{Client.id}"
+					widgetVar="UserTable" paginator="false" rows="5" editable="true">
+					<p:ajax event="rowEdit" listener="#{ConseillerBean.onRowEdit}"
+						update="matableCli" />
+					<p:ajax event="rowEditCancel" listener="#{ConseillerBean.onRowCancel}"
+						update="matableCli" />
+						
+					<p:column sortBy="#{Client.nom}">
+						<f:facet name="header">
+							<h:outputText value="Nom" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.nom}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.nom}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.prenom}">
+						<f:facet name="header">
+							<h:outputText value="Prenom" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.prenom}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.prenom}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+										<p:column sortBy="#{Client.adresse}">
+						<f:facet name="header">
+							<h:outputText value="Adresse" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.adresse}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.adressel}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.codePostal}">
+						<f:facet name="header">
+							<h:outputText value="Code Postal" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.codePostal}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.codePostal}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.ville}">
+						<f:facet name="header">
+							<h:outputText value="Ville" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.ville}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.ville}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.telephone}">
+						<f:facet name="header">
+							<h:outputText value="Telepehone" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.telephone}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.telephone}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column sortBy="#{Client.email}">
+						<f:facet name="header">
+							<h:outputText value="Email" />
+						</f:facet>
+						<p:cellEditor>
+							<f:facet name="output">
+								<h:outputText value="#{Client.email}" />
+							</f:facet>
+							<f:facet name="input">
+								<h:inputText value="#{Client.email}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					<p:column style="width:32px">
+						<p:rowEditor />
+					</p:column>
+				</p:dataTable>
+		</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
