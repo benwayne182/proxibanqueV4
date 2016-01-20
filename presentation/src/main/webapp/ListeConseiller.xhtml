@@ -13,49 +13,53 @@
 	<ui:composition template="/template/layout.xhtml">
 		<ui:define name="navConseiller"></ui:define>
 		<ui:define name="content">
-		<h2>Liste de Conseiller</h2>
-		<h:form id="form1">
-			<p:growl id="msgs" showDetail="true" />
-				<p:dataTable id="matableCons" var="Conseiller" value="#{ConseillerBean.listConseiller}"
-					selection="#{ConseillerBean.selectConseiller}" selectionMode="single"
-					style="width: 700" rowKey="#{Conseiller.id}" first="#{Conseiller.id}"
-					widgetVar="UserTable" paginator="false" rows="5" editable="true">
-					<p:ajax event="rowEdit" listener="#{ConseillerBean.onRowEdit}"
-						update="matableCons" />
-					<p:ajax event="rowEditCancel" listener="#{ConseillerBean.onRowCancel}"
-						update="matableCons" />
-						
-					<p:column sortBy="#{Conseiller.nom}">
-						<f:facet name="header">
-							<h:outputText value="Nom" />
-						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<h:outputText value="#{Conseiller.nom}" />
+			<h2>Liste de Conseiller</h2>
+			<div id="table_liste1">
+				<h:form id="form1">
+					<p:growl id="msgs" showDetail="true" />
+					<p:dataTable id="matableCons" var="Conseiller"
+						value="#{ConseillerBean.listConseiller}"
+						selection="#{ConseillerBean.selectConseiller}"
+						selectionMode="single" style="width: 700"
+						rowKey="#{Conseiller.id}" first="#{Conseiller.id}"
+						widgetVar="UserTable" paginator="false" rows="5" editable="true">
+						<p:ajax event="rowEdit" listener="#{ConseillerBean.onRowEdit}"
+							update="matableCons" />
+						<p:ajax event="rowEditCancel"
+							listener="#{ConseillerBean.onRowCancel}" update="matableCons" />
+
+						<p:column sortBy="#{Conseiller.nom}">
+							<f:facet name="header">
+								<h:outputText value="Nom" />
 							</f:facet>
-							<f:facet name="input">
-								<h:inputText value="#{Conseiller.nom}" />
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{Conseiller.nom}" />
+								</f:facet>
+								<f:facet name="input">
+									<h:inputText value="#{Conseiller.nom}" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						<p:column sortBy="#{Conseiller.prenom}">
+							<f:facet name="header">
+								<h:outputText value="Prenom" />
 							</f:facet>
-						</p:cellEditor>
-					</p:column>
-					<p:column sortBy="#{Conseiller.prenom}">
-						<f:facet name="header">
-							<h:outputText value="Prenom" />
-						</f:facet>
-						<p:cellEditor>
-							<f:facet name="output">
-								<h:outputText value="#{Conseiller.prenom}" />
-							</f:facet>
-							<f:facet name="input">
-								<h:inputText value="#{Conseiller.prenom}" />
-							</f:facet>
-						</p:cellEditor>
-					</p:column>
-					<p:column style="width:32px">
-						<p:rowEditor />
-					</p:column>
-				</p:dataTable>
-		</h:form>
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{Conseiller.prenom}" />
+								</f:facet>
+								<f:facet name="input">
+									<h:inputText value="#{Conseiller.prenom}" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+						<p:column style="width:32px">
+							<p:rowEditor />
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>
