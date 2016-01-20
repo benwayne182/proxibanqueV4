@@ -5,6 +5,9 @@
 	
 		<class>fr.gtm.proxibanquev4.domaine.Client</class>
 		<class>fr.gtm.proxibanquev4.domaine.Conseiller</class>
+		<class>fr.gtm.proxibanquev4.domaine.Compte</class>
+		<class>fr.gtm.proxibanquev4.domaine.CompteCourant</class>
+		<class>fr.gtm.proxibanquev4.domaine.CompteEpargne</class>
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
