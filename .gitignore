@@ -52,3 +52,4 @@ faces-config.pageflow
 pom.properties
 MANIFEST.MF
 target/
+.settings
