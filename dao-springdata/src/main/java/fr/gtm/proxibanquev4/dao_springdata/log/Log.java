@@ -16,7 +16,7 @@ public class Log {
 	long t2;
 	Logger logger=Logger.getLogger(this.getClass().getName());
 	
-	@Pointcut("execution(* fr.gtm.proxibanquev4.dao_springdata.client.*.*(..))")
+	@Pointcut("execution(* fr.gtm.proxibanquev4.dao_springdata.compte.*.*(..))")
 	public void operation(){}
 	
 	@Before("operation()")

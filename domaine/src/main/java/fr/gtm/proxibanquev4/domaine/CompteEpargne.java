@@ -11,7 +11,7 @@ import javax.persistence.Entity;
  */
 @Entity
 @DiscriminatorValue("CEpargne")
-public class CompteEpargne extends Compte {
+public class CompteEpargne extends Compte{
 
 	/**
 	 * Attribut spécifique de la classe CompteEpargne : tauxDInteret
@@ -34,7 +34,15 @@ public class CompteEpargne extends Compte {
 	public CompteEpargne() {
 		
 	}
-	
-	
+
+	public CompteEpargne(float tauxDInteret) {
+		super();
+		this.tauxDInteret = tauxDInteret;
+	}
+
+	@Override
+	public String toString() {
+		return "CompteEpargne [tauxDInteret=" + tauxDInteret + ", getId()=" + getId() + "]";
+	}
 	
 }

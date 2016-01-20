@@ -4,9 +4,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -102,7 +99,18 @@ public class Client extends Personne{
 	public void setConseiller(Conseiller conseiller) {
 		this.conseiller = conseiller;
 	}
-	
-	
+
+	public List<Compte> getListeComptes() {
+		return listeComptes;
+	}
+
+	public void setListeComptes(List<Compte> listeComptes) {
+		this.listeComptes = listeComptes;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [nom=" + nom + ", prenom=" + prenom + ", id=" + id + "]";
+	}
 	
 }

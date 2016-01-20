@@ -11,7 +11,7 @@ import javax.persistence.Entity;
  */
 @Entity
 @DiscriminatorValue("CCourant")
-public class CompteCourant extends Compte {
+public class CompteCourant extends Compte{
 
 	/**
 	 * Attribut spécifique de la classe CompteCourant : decouvertAutorisé
@@ -35,8 +35,14 @@ public class CompteCourant extends Compte {
 
 	}
 
+	public CompteCourant(float decouvertAutorise) {
+		super();
+		this.decouvertAutorise = decouvertAutorise;
+	}
 
-
-
+	@Override
+	public String toString() {
+		return "CompteCourant [decouvertAutorise=" + decouvertAutorise + ", getId()=" + getId() + "]";
+	}
 
 }
