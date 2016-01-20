@@ -12,7 +12,7 @@
 <body>
 
 <!-- Tag de redirection vers les pages xhtml de l'application. -->
-<jsp:forward page="/faces/ListeConseiller.xhtml"></jsp:forward>
+<jsp:forward page="/faces/connection.xhtml"></jsp:forward>
 <!--<jsp:forward page="login.html"></jsp:forward>-->
 </body>
 </html>

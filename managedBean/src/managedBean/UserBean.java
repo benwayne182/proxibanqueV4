@@ -22,4 +22,16 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String connection()
+	{
+		if(getLogin().equalsIgnoreCase("toto") && getPassword().equals("toto")
+		{
+			return "ConseillerAcceuil";
+		}
+		else
+		{
+			return "ConseillerErreur";
+		}
+	}
 }
