@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Création Conseiller</title>
+	
+</h:head>
+<h:body>
+
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navConseiller"></ui:define>
+		<ui:define name="content">
+			<center>
+				<f:view>
+					<div class="panel_div">
+						<h:form>
+							<h:panelGrid columns="2" cellpadding="5">
+								<h:outputLabel for="nom" value="Nom" />
+								<h:inputText id="nom" value="#{BeanCons.nom}" />
+
+								<h:outputLabel for="prenom" value="Prenom" />
+								<h:inputText id="prenom" value="#{BeanCons.prenom}" />
+
+								<h:outputLabel for="login" value="Login" />
+								<h:inputText id="login" value="#{BeanCons.login}" />
+
+								<h:outputLabel for="password" value="Password" />
+								<h:inputText id="password" value="#{BeanCons.password}" />
+
+
+							</h:panelGrid>
+							<p>
+								<h:commandButton value="Création d'un conseiller"
+									action="#{BeanCons.creationConseiller}" />
+							</p>
+						</h:form>
+					</div>
+				</f:view>
+			</center>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
