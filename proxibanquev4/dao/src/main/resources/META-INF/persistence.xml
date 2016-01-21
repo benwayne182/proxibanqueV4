@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+
+	<persistence-unit name="myUnit" transaction-type="RESOURCE_LOCAL">
+	
+		<class>fr.gtm.proxibanquev4.domaine.Client</class>
+		<class>fr.gtm.proxibanquev4.domaine.Compte</class>
+		<class>fr.gtm.proxibanquev4.domaine.CompteCourant</class>
+		<class>fr.gtm.proxibanquev4.domaine.CompteEpargne</class>
+		<class>fr.gtm.proxibanquev4.domaine.Conseiller</class>
+		<class>fr.gtm.proxibanquev4.domaine.Directeur</class>
+		<class>fr.gtm.proxibanquev4.domaine.Personne</class>
+		<class>fr.gtm.proxibanquev4.domaine.User</class>
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<properties>
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<property name="hibernate.show_sql" value="true" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+
+			<property name="packagesToScan" value="fr" />
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

@@ -16,7 +16,7 @@
 
 
 	<context:annotation-config />
-	<context:component-scan base-package="fr"/>
+	<context:component-scan base-package="fr.gtm.proxibanquev4.dao"/>
 	
 	<context:property-placeholder location="classpath*:bdd/sgbd.properties" />
 
@@ -33,12 +33,12 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="persistenceUnitName" value="myUnit1" />
+		<property name="persistenceUnitName" value="myUnit" />
 	</bean>
 	
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
-	<jpa:repositories base-package="fr.gtm.proxibanquev4.dao_springdata"></jpa:repositories>
+	<jpa:repositories base-package="fr"></jpa:repositories>
 </beans>

@@ -1,11 +1,11 @@
-package fr.gtm.proxibanquev4.dao_springdata.client;
+package fr.gtm.proxibanquev4.service.client;
 
 import java.util.List;
 
 import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
 
-public interface IClientDao {
+public interface IClientService {
 	
 	public void addClient (Client client);
 	public Client readClientById (int id);

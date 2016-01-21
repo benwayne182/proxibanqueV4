@@ -1,4 +1,4 @@
-package fr.gtm.proxibanquev4.dao_springdata.client;
+package fr.gtm.proxibanquev4.service.client;
 
 import java.util.List;
 
@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.gtm.proxibanquev4.dao.client.IClientDaoSD;
 import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
 
-
-@Component("clientdao")
+@Component("clientservice")
 @Transactional
-public class ClientDao implements IClientDao {
+public class ClientService implements IClientService {
 
 	@Autowired
 	private IClientDaoSD dao;
