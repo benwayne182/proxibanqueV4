@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
 
 /**
- * Interface SpringDATA pour le DAO du Conseiller, hérite de JpaRepository
- * @author  Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ * Interface SpringDATA pour le DAO du Conseiller, hï¿½rite de JpaRepository
+ * @author  Benoit, Clï¿½mentP, Coralie, Margherita, Paul-Henri
  *
  */
 public interface IConseillerDaoSD extends JpaRepository<Conseiller, Integer> {
@@ -19,5 +19,6 @@ public interface IConseillerDaoSD extends JpaRepository<Conseiller, Integer> {
 	 * @return liste des objets Conseiller
 	 */
 	public List<Conseiller> findByNom(String nom);
+	public Conseiller findByLogin (String login);
 
 }

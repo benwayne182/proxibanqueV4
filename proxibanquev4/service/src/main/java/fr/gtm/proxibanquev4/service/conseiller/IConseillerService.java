@@ -42,5 +42,7 @@ public interface IConseillerService {
 	 * @return liste des conseillers avec le meme nom
 	 */
 	public List<Conseiller> readConseillerByNom(String nom);
+	
+	public Conseiller readConseillerByLogin(String login);
 
 }
