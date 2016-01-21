@@ -1,6 +1,7 @@
 package fr.gtm.proxibanquev4.service.compte;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,8 @@ public class CompteService implements ICompteService {
 	
 	@Autowired
 	private ICompteDaoSD dao;
+	
+	Logger logger=Logger.getLogger(this.getClass().getName());
 
 	public void addCompte(Compte compte) {
 		// TODO Auto-generated method stub
@@ -64,7 +67,7 @@ public class CompteService implements ICompteService {
 			
 			dao.save(debiteur);
 			dao.save(crediteur);
-		} else System.out.println("Le compte ne peut être débité.");
+		} else logger.info("Le compte ne peut être débité.");
 		
 	}
 

@@ -8,7 +8,7 @@ import fr.gtm.proxibanquev4.domaine.Conseiller;
 import fr.gtm.proxibanquev4.service.conseiller.IConseillerService;
 import junit.framework.TestCase;
 
-public class TestConseillerDao extends TestCase {
+public class TestConseillerService extends TestCase {
 	
 	private Conseiller conseiller;
 	private ClassPathXmlApplicationContext appContext;
