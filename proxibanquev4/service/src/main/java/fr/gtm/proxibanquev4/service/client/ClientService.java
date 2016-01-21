@@ -10,10 +10,18 @@ import fr.gtm.proxibanquev4.dao.client.IClientDaoSD;
 import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
 
+/**
+ * Implementation des methodes de la couche service pour le Client
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 @Component("clientservice")
 @Transactional
 public class ClientService implements IClientService {
 
+	/**
+	 * Injection de l'interface del la couche Dao
+	 */
 	@Autowired
 	private IClientDaoSD dao;
 
