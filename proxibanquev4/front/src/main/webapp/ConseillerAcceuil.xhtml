@@ -5,14 +5,12 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<link rel="stylesheet" href="resources/css/main.css" />
+	<title>Acceuil</title>
+	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
-<h:body>
-	<div id="header_titre">
-		<h:graphicImage value="resources/images/logo.png" width="100" />
-
-		<h1 id="bank_name">ProxiBanque</h1>
-		<p>La banque de proximité</p>
-	</div>
-</h:body>
+<body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navDirecteur"></ui:define>
+	</ui:composition>
+</body>
 </html>

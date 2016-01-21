@@ -5,13 +5,14 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<link rel="stylesheet" href="resources/css/main.css" />
+	<title>Acceuil</title>
+	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
 <h:body>
-	<ui:composition>
-	<div id="conteneur">
-	<h1>   </h1>
-	</div>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navConseiller"></ui:define>
+		<ui:define name="content">
+		</ui:define>
 	</ui:composition>
 </h:body>
 </html>
