@@ -8,7 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.gtm.proxibanquev4.dao.conseiller.IConseillerDaoSD;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
-
+/**
+ * Implementation des methodes de l'interface IConseillerService
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 @Component("conseillerservice")
 @Transactional
 public class ConseillerService implements IConseillerService {

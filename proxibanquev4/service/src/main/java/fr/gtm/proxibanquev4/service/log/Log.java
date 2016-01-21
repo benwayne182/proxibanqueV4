@@ -11,7 +11,11 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-
+/**
+ * Classe pour enregistrer des messages de logging, declanches par l'utilisation des methodes de la couche service
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 @Aspect
 public class Log {
 	
@@ -24,6 +28,10 @@ public class Log {
 	@Pointcut("execution(* fr.gtm.proxibanquev4.service.*.*.*(..))")
 	public void operation(){}
 	
+	/**
+	 * Log avant l'execution de la méthode
+	 * @param thisJoinPoint
+	 */
 	@Before("operation()")
 	public void avant(JoinPoint thisJoinPoint){
 		t1=System.currentTimeMillis();
@@ -31,6 +39,10 @@ public class Log {
 		logger.info("Avant "+thisJoinPoint.getSignature());
 	}
 	
+	/**
+	 * Log après l'execution de la methode
+	 * @param thisJoinPoint
+	 */
 	@After("operation()")
 	public void logApres(JoinPoint thisJoinPoint){
 		t2=System.currentTimeMillis();
@@ -38,6 +50,11 @@ public class Log {
 		logger.info("Apres "+thisJoinPoint.getSignature()+" Durée d'execution : " + (t2-t1));
 	}
 	
+	/**
+	 * Log apres le retour du resultat
+	 * @param joinPoint identifie la methode qui a été declanchée
+	 * @param result objet retourné par la méthode
+	 */
 	@AfterReturning(pointcut = "operation()", returning= "result")
 	public void logAfterReturning(JoinPoint joinPoint, Object result) {
 		logger.info("************************************");
