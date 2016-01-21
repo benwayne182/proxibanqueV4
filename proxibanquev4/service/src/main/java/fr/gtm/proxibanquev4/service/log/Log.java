@@ -1,6 +1,9 @@
 package fr.gtm.proxibanquev4.service.log;
 
+import java.io.IOException;
+import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -16,7 +19,9 @@ public class Log {
 	long t2;
 	Logger logger=Logger.getLogger(this.getClass().getName());
 	
-	@Pointcut("execution(* fr.gtm.proxibanquev4.service.client.*.*(..))")
+	FileHandler fh;
+	
+	@Pointcut("execution(* fr.gtm.proxibanquev4.service.*.*.*(..))")
 	public void operation(){}
 	
 	@Before("operation()")
@@ -39,7 +44,23 @@ public class Log {
 		logger.info("METHODE : " + joinPoint.getSignature().getName());
 		logger.info("VALEUR DE RETOUR DE LA METHODE : " + result);
 		logger.info("************************************");
+		
+		try {  
 
-	   }
+	        // This block configure the logger with handler and formatter  
+	        fh = new FileHandler("C:/Users/Adminl/Documents/loggin.log", true);  
+	        logger.addHandler(fh);
+	        SimpleFormatter formatter = new SimpleFormatter();  
+	        fh.setFormatter(formatter);
+
+	    } catch (SecurityException e) {  
+	        e.printStackTrace();  
+	    } catch (IOException e) {  
+	        e.printStackTrace();  
+	    }
+		
+	}
 
 }
+
+

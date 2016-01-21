@@ -1,12 +1,20 @@
 package fr.gtm.proxibanquev4.domaine;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 /**
  * Classe abstraite User, hérite de la classe Personne, et possède deux classes filles : Conseiller et Directeur
  * Représente un utilisateur du programme
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-public abstract class User extends Personne{
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="TYPE_USER")
+public class Users extends Personne{
 	
 	/**
 	 * Attributs spécifiques de la clase User : login, password
@@ -31,7 +39,7 @@ public abstract class User extends Personne{
 	/**
 	 * Constructeur vide de la classe User
 	 */
-	public User() {
+	public Users() {
 		
 	}
 	

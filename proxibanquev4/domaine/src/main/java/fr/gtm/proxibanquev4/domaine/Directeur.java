@@ -1,5 +1,6 @@
 package fr.gtm.proxibanquev4.domaine;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -9,7 +10,8 @@ import javax.persistence.Entity;
  *
  */
 @Entity
-public class Directeur extends User{
+@DiscriminatorValue("DIRECTEUR")
+public class Directeur extends Users{
 
 	/**
 	 * Constructeur vide d'un directeur

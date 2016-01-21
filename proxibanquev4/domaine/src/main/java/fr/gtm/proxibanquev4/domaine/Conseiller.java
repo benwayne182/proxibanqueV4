@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
@@ -14,7 +15,8 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Conseiller extends User{
+@DiscriminatorValue("CONSEILLER")
+public class Conseiller extends Users{
 	
 	/**
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
