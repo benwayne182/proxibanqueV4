@@ -9,6 +9,7 @@
 }
 
 #page_erreur{
+	min-height: 400px;
 	text-align: center;
 	font-size: 80px;
 }
