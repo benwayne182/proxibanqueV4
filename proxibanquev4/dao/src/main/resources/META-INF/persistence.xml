@@ -11,13 +11,13 @@
 		<class>fr.gtm.proxibanquev4.domaine.Conseiller</class>
 		<class>fr.gtm.proxibanquev4.domaine.Directeur</class>
 		<class>fr.gtm.proxibanquev4.domaine.Personne</class>
-		<class>fr.gtm.proxibanquev4.domaine.User</class>
+		<class>fr.gtm.proxibanquev4.domaine.Users</class>
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 		<properties>
 
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 
 			<property name="hibernate.show_sql" value="true" />
 
