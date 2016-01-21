@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -29,7 +30,7 @@ public class Client extends Personne{
 	@ManyToOne
 	private Conseiller conseiller;
 	
-	@OneToMany (mappedBy = "client"  , cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToMany (mappedBy = "client"  , cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
 	private List<Compte> listeComptes;
 	
 	/**

@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 /**
@@ -17,14 +18,16 @@ import javax.persistence.OneToMany;
 @Entity
 @DiscriminatorValue("CONSEILLER")
 public class Conseiller extends Users{
-	
+
+
+
 	/**
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
 	 * Elle hérite des attributs d'un User : id, nom, prenom, login, password
 	 */
-	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
 	Collection<Client> listeClients = new ArrayList<Client>();
-	
+
 	/**
 	 * Constructeur vide d'un conseiller
 	 */
@@ -43,6 +46,10 @@ public class Conseiller extends Users{
 		this.prenom = prenom;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Conseiller [listeClients=" + listeClients + ", login=" + login + ", password=" + password + ", nom="
+				+ nom + ", prenom=" + prenom + ", id=" + id + "]";
+	}
 
 }
