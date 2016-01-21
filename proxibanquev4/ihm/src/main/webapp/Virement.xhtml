@@ -5,13 +5,12 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
+	<title>Virement</title>
 	<link rel="stylesheet" href="resources/css/main.css" />
 </h:head>
-<h:body>
-	<div id="header_titre">
-		<center>
-			<h:graphicImage value="resources/images/logo.png" width="300" />
-		</center>
-	</div>
-</h:body>
+<body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navDirecteur"></ui:define>
+	</ui:composition>
+</body>
 </html>

@@ -14,6 +14,14 @@
 	font-size: 80px;
 }
 
+#page_connec{
+	min-height: 400px;
+	margin: auto;
+}
+#page_connec_bloc{
+	vertical-align: middle;
+	
+}
 #panel_div{
     width: 320px;
     padding: 10px;
