@@ -35,7 +35,7 @@ public class Log {
 	public void logApres(JoinPoint thisJoinPoint){
 		t2=System.currentTimeMillis();
 		logger.info("***********************************");
-		logger.info("Apres "+thisJoinPoint.getSignature()+" DurÃ©e d'execution : " + (t2-t1));
+		logger.info("Apres "+thisJoinPoint.getSignature()+" Durée d'execution : " + (t2-t1));
 	}
 	
 	@AfterReturning(pointcut = "operation()", returning= "result")
@@ -48,7 +48,7 @@ public class Log {
 		try {  
 
 	        // This block configure the logger with handler and formatter  
-	        fh = new FileHandler("C:/Users/Adminl/Documents/loggin.log", true);  
+	        fh = new FileHandler("C:/Users/Adminl/Documents/Service.log", true);  
 	        logger.addHandler(fh);
 	        SimpleFormatter formatter = new SimpleFormatter();  
 	        fh.setFormatter(formatter);

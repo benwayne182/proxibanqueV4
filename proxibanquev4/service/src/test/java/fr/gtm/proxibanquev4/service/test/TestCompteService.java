@@ -26,6 +26,8 @@ public class TestCompteService extends TestCase {
 		super.setUp();
 		compteCourant = new CompteCourant(100);
 		compteEpargne = new CompteEpargne(200);
+		compteCourant.setSolde(500);
+		compteEpargne.setSolde(500);
 		appContext = new ClassPathXmlApplicationContext("spring/application-config-service.xml");
 
 		clientservice = (IClientService) appContext.getBean("clientservice");
@@ -64,6 +66,10 @@ public class TestCompteService extends TestCase {
 		client = clientservice.readClientById(2);
 		List<Compte> listeComptes = compteservice.readCompteByClient(client);
 		assertNotNull(listeComptes);
+	}
+	
+	public void testVirement() {
+		compteservice.virement(compteCourant, compteEpargne, 50000);
 	}
 
 }

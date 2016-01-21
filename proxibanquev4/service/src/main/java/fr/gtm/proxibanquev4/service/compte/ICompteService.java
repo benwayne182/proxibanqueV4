@@ -13,5 +13,6 @@ public interface ICompteService {
 	public void updateCompte (Compte compte);
 	public List<Compte> readAllComptes();
 	public List<Compte> readCompteByClient(Client client);
+	public void virement (Compte debiteur, Compte crediteur, float montant);
 
 }
