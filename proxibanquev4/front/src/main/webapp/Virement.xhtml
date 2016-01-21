@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Virement</title>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<body>
+	<ui:composition template="/template/layout.xhtml">
+		<ui:define name="navDirecteur"></ui:define>
+		<ui:define name="content">
+		
+		<table>
+  <tr>
+    <th>compte à débiter</th>
+    <th> </th>
+    <th>compte à créditer</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td> </td>
+    <td>Griffin</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>Griffin</td>
+  </tr>
+    <tr>
+    <td> </td>
+    <td><h:commandButton value="Valider le virement"
+	action="#{BeanCons.creationConseiller}" /></td>
+  </tr>
+</table>
+		
+		
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

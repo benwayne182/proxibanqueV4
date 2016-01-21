@@ -11,6 +11,34 @@
 <body>
 	<ui:composition template="/template/layout.xhtml">
 		<ui:define name="navDirecteur"></ui:define>
+		<ui:define name="content">
+			<br />
+			<center>
+				<f:view>
+					<div id="page_connec">
+						<h:form>
+							<h:panelGrid columns="2" cellpadding="5">
+								<h:outputLabel for="CompteDebite" value="Compte Débité" />
+								<h:inputText id="CompteDebite" value="#{BeanCli.nom}">
+								</h:inputText>
+
+								<h:outputLabel for="CompteCredite" value="Compte Crédité" />
+								<h:inputText id="CompteCredite" value="#{BeanCli.prenom}" />
+
+								<h:outputLabel for="adresse" value="Montant" />
+								<h:inputText id="adresse" value="#{BeanCli.adresse}" />
+
+							</h:panelGrid>
+							<p>
+								<h:commandButton value="Valider la transaction"
+									action="#{BeanCli.creationClient}" />
+							</p>
+						</h:form>
+					</div>
+				</f:view>
+			</center>
+		</ui:define>
+
 	</ui:composition>
 </body>
 </html>
