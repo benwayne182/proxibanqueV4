@@ -8,12 +8,20 @@ import fr.gtm.proxibanquev4.domaine.Conseiller;
 import fr.gtm.proxibanquev4.service.conseiller.IConseillerService;
 import junit.framework.TestCase;
 
+/**
+ * Test de la couche service du conseiller
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 public class TestConseillerService extends TestCase {
 	
 	private Conseiller conseiller;
 	private ClassPathXmlApplicationContext appContext;
 	private IConseillerService conseillerservice;
 	
+	/**
+	 * Mise en place du test
+	 */
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
