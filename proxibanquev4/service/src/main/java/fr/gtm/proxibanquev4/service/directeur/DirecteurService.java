@@ -6,13 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.gtm.proxibanquev4.dao.directeur.IDirecteurDaoSD;
 import fr.gtm.proxibanquev4.domaine.Directeur;
+
+@Component("directeurservice")
+@Transactional
 /**
  * Implementation des methodes de l'interface IDirecteurService
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Component("directeurservice")
-@Transactional
 public class DirecteurService implements IDirecteurService {
 
 	@Autowired

@@ -15,6 +15,11 @@ import fr.gtm.proxibanquev4.domaine.CompteEpargne;
 
 @Component("compteservice")
 @Transactional
+/**
+ * Classe de la couche service des comptes, implémente l'interface associée
+ * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
+ *
+ */
 public class CompteService implements ICompteService {
 	
 	@Autowired

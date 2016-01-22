@@ -5,15 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="TYPE_USER")
 /**
  * Classe abstraite User, hérite de la classe Personne, et possède deux classes filles : Conseiller et Directeur
  * Représente un utilisateur du programme
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="TYPE_USER")
 public class Users extends Personne{
 	
 	/**

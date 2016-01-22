@@ -3,14 +3,15 @@ package fr.gtm.proxibanquev4.domaine;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+
+@Entity
+@DiscriminatorValue("CEpargne")
 /**
  * Classe CompteEpargne, hérite de la classe abstraite Compte
  * Représente un compte épargne détenu par un client
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Entity
-@DiscriminatorValue("CEpargne")
 public class CompteEpargne extends Compte{
 
 	/**
@@ -32,7 +33,7 @@ public class CompteEpargne extends Compte{
 	 * Constructeur vide de la classe CompteEpargne
 	 */
 	public CompteEpargne() {
-		
+
 	}
 
 	public CompteEpargne(float tauxDInteret) {
@@ -44,5 +45,5 @@ public class CompteEpargne extends Compte{
 	public String toString() {
 		return "CompteEpargne [tauxDInteret=" + tauxDInteret + ", getId()=" + getId() + "]";
 	}
-	
+
 }

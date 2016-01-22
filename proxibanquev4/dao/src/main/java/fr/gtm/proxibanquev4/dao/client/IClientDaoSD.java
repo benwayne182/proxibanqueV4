@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
+
 /**
  * Interface SpringDATA pour le DAO du Client, hérite de JpaRepository
  * @author  Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-
 public interface IClientDaoSD extends JpaRepository<Client, Integer>{
 	
 	/**

@@ -9,23 +9,25 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
+
+@Entity
+@DiscriminatorValue("CONSEILLER")
 /**
  * Classe Conseiller, hérite de la classe User
  * Représente un conseiller de la banque
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Entity
-@DiscriminatorValue("CONSEILLER")
 public class Conseiller extends Users{
 
 
 
+
+	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
 	/**
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
 	 * Elle hérite des attributs d'un User : id, nom, prenom, login, password
 	 */
-	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
 	Collection<Client> listeClients = new ArrayList<Client>();
 
 	/**
