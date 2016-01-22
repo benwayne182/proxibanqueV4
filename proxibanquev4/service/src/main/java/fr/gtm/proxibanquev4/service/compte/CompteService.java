@@ -23,37 +23,30 @@ public class CompteService implements ICompteService {
 	Logger logger=Logger.getLogger(this.getClass().getName());
 
 	public void addCompte(Compte compte) {
-		// TODO Auto-generated method stub
 		dao.save(compte);
 	}
 
 	public Compte readCompteById(int id) {
-		// TODO Auto-generated method stub
 		return dao.findOne(id);
 	}
 
 	public void deleteCompte(int id) {
-		// TODO Auto-generated method stub
 		dao.delete(id);
 	}
 
 	public void updateCompte(Compte compte) {
-		// TODO Auto-generated method stub
 		dao.save(compte);
 	}
 
 	public List<Compte> readAllComptes() {
-		// TODO Auto-generated method stub
 		return dao.findAll();
 	}
 
 	public List<Compte> readCompteByClient(Client client) {
-		// TODO Auto-generated method stub
 		return dao.findByClient(client);
 	}
 
 	public void virement(Compte debiteur, Compte crediteur, float montant) {
-		// TODO Auto-generated method stub
 		float soldeDebiteur = debiteur.getSolde();
 		float soldeCrediteur = crediteur.getSolde();
 		
