@@ -28,4 +28,8 @@ public class DirecteurService implements IDirecteurService {
 
 	}
 
+	public Directeur readDirecteurByLogin(String login) {
+		return dao.findByLogin(login);
+	}
+
 }

@@ -18,5 +18,7 @@ public interface IDirecteurService {
 	 * @param dir objet Directeur à inserer dans la base
 	 */
 	public void addDirecteur(Directeur dir);
+	
+	public Directeur readDirecteurByLogin(String login);
 
 }
