@@ -82,7 +82,7 @@ public class ClientBean {
 		this.email = email;
 	}
 	
-public void creationClient(){
+public String creationClient(){
 		Client client = new Client();
 		client.setAdresse(adresse);
 		client.setCodePostal(codePostal);
@@ -93,6 +93,8 @@ public void creationClient(){
 		client.setVille(ville);
 		
 		cliserv.addClient(client);
+		
+		return "ListeClient";
 		
 	}
 }
