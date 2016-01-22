@@ -10,7 +10,10 @@
     	/WEB-INF/application-config.xml
     	/WEB-INF/application-config-ihm.xml
     	/WEB-INF/application-config-service.xml
-    </param-value>
+    	</param-value>
+    	
+    	
+    	
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
