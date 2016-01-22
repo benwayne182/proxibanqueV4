@@ -24,7 +24,7 @@ public class Conseiller extends Users{
 
 
 
-	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
 	/**
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
 	 * Elle hérite des attributs d'un User : id, nom, prenom, login, password
