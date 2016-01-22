@@ -5,13 +5,24 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import fr.gtm.proxibanquev4.domaine.Client;
+import fr.gtm.proxibanquev4.domaine.Directeur;
+import fr.gtm.proxibanquev4.service.client.IClientService;
 
 @ManagedBean
 @SessionScoped
 @Component
 public class ClientBean {
 
+
+	@Autowired
+	private IClientService cliserv;
+	
+	private Client client;
+	
 	protected String nom;
 	protected String prenom;
 	protected String adresse;
@@ -71,6 +82,20 @@ public class ClientBean {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+public void creationClient(){
+	
+		client.setAdresse(adresse);
+		client.setCodePostal(codePostal);
+		client.setEmail(email);
+		client.setTel(telephone);
+		client.setNom(nom);
+		client.setPrenom(prenom);
+		client.setVille(ville);
+		
+		cliserv.addClient(client);
+		
 	}
 }
 
