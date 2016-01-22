@@ -21,8 +21,6 @@ public class ClientBean {
 	@Autowired
 	private IClientService cliserv;
 	
-	private Client client;
-	
 	protected String nom;
 	protected String prenom;
 	protected String adresse;
@@ -85,7 +83,7 @@ public class ClientBean {
 	}
 	
 public void creationClient(){
-	
+		Client client = new Client();
 		client.setAdresse(adresse);
 		client.setCodePostal(codePostal);
 		client.setEmail(email);
