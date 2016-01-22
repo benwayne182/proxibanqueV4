@@ -20,22 +20,22 @@
 						<h:form>
 							<h:panelGrid columns="2" cellpadding="5">
 								<h:outputLabel for="nom" value="Nom" />
-								<h:inputText id="nom" value="#{ConseillerBean.nom}" />
+								<h:inputText id="nom" value="#{conseillerBean.nom}" />
 
 								<h:outputLabel for="prenom" value="Prenom" />
-								<h:inputText id="prenom" value="#{BeanCons.prenom}" />
+								<h:inputText id="prenom" value="#{conseillerBean.prenom}" />
 
 								<h:outputLabel for="login" value="Login" />
-								<h:inputText id="login" value="#{BeanCons.login}" />
+								<h:inputText id="login" value="#{conseillerBean.login}" />
 
 								<h:outputLabel for="password" value="Password" />
-								<h:inputText id="password" value="#{BeanCons.password}" />
+								<h:inputText id="password" value="#{conseillerBean.password}" />
 
 
 							</h:panelGrid>
 							<p>
 								<h:commandButton value="Création d'un conseiller"
-									action="#{BeanCons.creationConseiller}" />
+									action="#{conseillerBean.creationConseiller}" />
 							</p>
 						</h:form>
 					</div>
