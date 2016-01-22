@@ -69,7 +69,7 @@ public class Log {
 		try {  
 
 			// This block configure the logger with handler and formatter  
-			fh = new FileHandler("C:/Users/Adminl/Documents/Service.log", true);  
+			fh = new FileHandler("C:/Logs/Service.log", true);  
 			logger.addHandler(fh);
 			SimpleFormatter formatter = new SimpleFormatter();  
 			fh.setFormatter(formatter);
