@@ -46,11 +46,12 @@ public class ConseillerBean {
 		this.password = password;
 	}
 
-	public void creationConseiller(){
+	public String creationConseiller(){
 		Conseiller conseiller = new Conseiller(nom,prenom);
 		conseiller.setLogin(login);
 		conseiller.setPassword(password);
 		service.addConseiller(conseiller);
+		return "ListeConseiller";
 
 	}
 	
