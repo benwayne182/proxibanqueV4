@@ -10,6 +10,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
+
+
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="TYPE_COMPTE")
 /**
  * Classe abstraite Compte
  * Représente un compte en banque détenu par un client.
@@ -17,17 +22,14 @@ import javax.persistence.ManyToOne;
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-
-@Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="TYPE_COMPTE")
 public abstract class Compte {
 	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	/**
 	 * Attributs spécifiques à la classe abstraite Compte : id, solde et client
 	 */
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private float solde;
 	

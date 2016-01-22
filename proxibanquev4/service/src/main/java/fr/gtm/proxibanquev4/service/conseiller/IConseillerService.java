@@ -43,6 +43,11 @@ public interface IConseillerService {
 	 */
 	public List<Conseiller> readConseillerByNom(String nom);
 	
+	/**
+	 * Lire un conseiller par son Login
+	 * @param login login du conseiller cherché
+	 * @return Conseiller le conseiller cherché
+	 */
 	public Conseiller readConseillerByLogin(String login);
 
 }

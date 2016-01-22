@@ -8,13 +8,14 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+
+@Entity
 /**
  * Classe client. La classe client hérite des attributs d'une personne (nom, prénom, id).
  * Représente un client. 
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Entity
 public class Client extends Personne{
 	
 	/**

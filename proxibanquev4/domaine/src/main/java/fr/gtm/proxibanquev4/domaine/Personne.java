@@ -7,14 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 /**
  * Classe abstraite Personne
  * Elle possède plusieurs classes filles : User et Client
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
  *
  */
-@Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Personne {
 
 	/**
