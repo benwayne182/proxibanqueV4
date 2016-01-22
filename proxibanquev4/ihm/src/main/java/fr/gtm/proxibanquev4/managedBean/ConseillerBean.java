@@ -1,11 +1,13 @@
 package fr.gtm.proxibanquev4.managedBean;
 
-import java.io.Serializable;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import fr.gtm.proxibanquev4.domaine.Conseiller;
+import fr.gtm.proxibanquev4.service.conseiller.IConseillerService;
 
 @ManagedBean
 @SessionScoped
@@ -16,7 +18,9 @@ public class ConseillerBean {
 	protected String prenom;
 	protected String login;
 	protected String password;
-	
+	@Autowired
+	private IConseillerService service;
+
 	public String getNom() {
 		return nom;
 	}
@@ -41,5 +45,14 @@ public class ConseillerBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public void creationConseiller(){
+		Conseiller conseiller = new Conseiller(nom,prenom);
+		conseiller.setLogin(login);
+		conseiller.setPassword(password);
+		service.addConseiller(conseiller);
+
+	}
 	
+
 }
