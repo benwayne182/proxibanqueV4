@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -23,12 +24,15 @@ public class Conseiller extends Users{
 
 
 
-	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="conseiller",cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	/**
 	 * La classe conseiller a comme attribut spécifique sa liste de clients
 	 * Elle hérite des attributs d'un User : id, nom, prenom, login, password
 	 */
 	Collection<Client> listeClients = new ArrayList<Client>();
+	
+	@ManyToOne
+	private Directeur directeur;
 
 	/**
 	 * Constructeur vide d'un conseiller

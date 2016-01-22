@@ -1,7 +1,12 @@
 package fr.gtm.proxibanquev4.domaine;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -21,7 +26,8 @@ public class Directeur extends Users{
 		super();
 	}
 	
-	
+	@OneToMany(mappedBy="directeur",cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	Collection<Conseiller> listeConseillers = new ArrayList<Conseiller>();
 	
 	
 

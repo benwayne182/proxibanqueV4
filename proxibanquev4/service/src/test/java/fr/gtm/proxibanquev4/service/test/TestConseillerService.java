@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
+import fr.gtm.proxibanquev4.domaine.Directeur;
 import fr.gtm.proxibanquev4.service.conseiller.IConseillerService;
 import junit.framework.TestCase;
 
@@ -16,6 +18,7 @@ import junit.framework.TestCase;
 public class TestConseillerService extends TestCase {
 	
 	private Conseiller conseiller;
+	private Directeur directeur;
 	private ClassPathXmlApplicationContext appContext;
 	private IConseillerService conseillerservice;
 	
@@ -74,6 +77,11 @@ public class TestConseillerService extends TestCase {
 	 */
 	public void testReadConseillerByNom() {
 		List<Conseiller> listeConseiller = conseillerservice.readConseillerByNom(conseiller.getNom());
+		assertNotNull(listeConseiller);
+	}
+	
+	public void testReadConseillerByDirecteur() {
+		List<Conseiller> listeConseiller = conseillerservice.readConseillerByDirecteur(directeur);
 		assertNotNull(listeConseiller);
 	}
 

@@ -3,6 +3,7 @@ package fr.gtm.proxibanquev4.service.conseiller;
 import java.util.List;
 
 import fr.gtm.proxibanquev4.domaine.Conseiller;
+import fr.gtm.proxibanquev4.domaine.Directeur;
 /**
  * Interface de la couche service pour le traitement des objets Conseiller
  * @author Benoit, ClémentP, Coralie, Margherita, Paul-Henri
@@ -49,5 +50,6 @@ public interface IConseillerService {
 	 * @return Conseiller le conseiller cherché
 	 */
 	public Conseiller readConseillerByLogin(String login);
+	public List<Conseiller> readConseillerByDirecteur(Directeur directeur);
 
 }

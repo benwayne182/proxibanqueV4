@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.gtm.proxibanquev4.dao.conseiller.IConseillerDaoSD;
+import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
+import fr.gtm.proxibanquev4.domaine.Directeur;
 
 @Component("conseillerservice")
 @Transactional
@@ -48,6 +50,10 @@ public class ConseillerService implements IConseillerService {
 	
 	public Conseiller readConseillerByLogin(String login) {
 		return dao.findByLogin(login);
+	}
+	
+	public List<Conseiller> readConseillerByDirecteur(Directeur directeur) {
+		return dao.findByDirecteur(directeur);
 	}
 
 }
