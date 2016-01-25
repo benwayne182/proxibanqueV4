@@ -8,6 +8,7 @@ import fr.gtm.proxibanquev4.domaine.Client;
 import fr.gtm.proxibanquev4.domaine.Conseiller;
 import fr.gtm.proxibanquev4.domaine.Directeur;
 import fr.gtm.proxibanquev4.service.conseiller.IConseillerService;
+import fr.gtm.proxibanquev4.service.directeur.IDirecteurService;
 import junit.framework.TestCase;
 
 /**
@@ -21,6 +22,7 @@ public class TestConseillerService extends TestCase {
 	private Directeur directeur;
 	private ClassPathXmlApplicationContext appContext;
 	private IConseillerService conseillerservice;
+	private IDirecteurService directeurservice;
 	
 	/**
 	 * Mise en place du test, création d'un conseiller, récupération des beans
@@ -32,12 +34,15 @@ public class TestConseillerService extends TestCase {
 		appContext = new ClassPathXmlApplicationContext("spring/application-config-service.xml");
 
 		conseillerservice = (IConseillerService) appContext.getBean("conseillerservice");
+		directeurservice = (IDirecteurService) appContext.getBean("directeurservice");
 	}
 	
 	/**
 	 * Test d'ajout de conseiller
 	 */
 	public void testAddConseiller() {
+		directeur = directeurservice.readDirecteurByLogin("michel");
+		conseiller.setDirecteur(directeur);
 		conseillerservice.addConseiller(conseiller);
 	}
 	
@@ -45,7 +50,7 @@ public class TestConseillerService extends TestCase {
 	 * Test de lecture d'un conseiller par son ID
 	 */
 	public void testReadConseillerById() {
-		Conseiller conseiller = conseillerservice.readConseillerById(1);
+		Conseiller conseiller = conseillerservice.readConseillerById(2);
 		assertNotNull(conseiller);
 	}
 	

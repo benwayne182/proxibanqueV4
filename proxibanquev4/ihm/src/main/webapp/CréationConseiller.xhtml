@@ -32,11 +32,12 @@
 								<h:outputLabel for="password" value="Password" />
 								<h:inputText id="password" value="#{conseillerBean.password}" />
 
-
 							</h:panelGrid>
 							<p>
 								<h:commandButton value="Création d'un conseiller"
-									action="#{conseillerBean.creationConseiller}" />
+									action="#{conseillerBean.creationConseiller}" >
+									<f:param name="loginUser" value="#{userBean.login}"/>
+								</h:commandButton>
 							</p>
 						</h:form>
 					</div>

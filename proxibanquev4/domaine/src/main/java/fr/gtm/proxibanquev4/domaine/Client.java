@@ -31,7 +31,7 @@ public class Client extends Personne{
 	@ManyToOne
 	private Conseiller conseiller;
 	
-	@OneToMany (mappedBy = "client"  , cascade={CascadeType.PERSIST, CascadeType.REMOVE},fetch=FetchType.EAGER)
+	@OneToMany (mappedBy = "client"  , cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Compte> listeComptes;
 	
 	/**

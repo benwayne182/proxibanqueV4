@@ -34,6 +34,22 @@ public class Conseiller extends Users{
 	@ManyToOne
 	private Directeur directeur;
 
+	public Collection<Client> getListeClients() {
+		return listeClients;
+	}
+
+	public void setListeClients(Collection<Client> listeClients) {
+		this.listeClients = listeClients;
+	}
+
+	public Directeur getDirecteur() {
+		return directeur;
+	}
+
+	public void setDirecteur(Directeur directeur) {
+		this.directeur = directeur;
+	}
+
 	/**
 	 * Constructeur vide d'un conseiller
 	 */

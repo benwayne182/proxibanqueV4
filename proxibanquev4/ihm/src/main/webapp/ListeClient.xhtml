@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:c="http://java.sun.com/jsp/jstl/core"> 
 
 <h:head>
 	<title>Liste de client</title>
@@ -18,9 +18,9 @@
 	<c:set var="listeClient"
 		value="#{conseillerBean.readClientByConseiller(conseiller)}" />
 		
-<!-- 	<h:outputText value="#{loginConseiller}"></h:outputText> -->
-<!-- 	<h:outputText value="#{conseiller}"></h:outputText> -->
-<!-- 	<h:outputText value="#{listeClient}"></h:outputText> -->
+	<h:outputText value="#{loginConseiller}"></h:outputText>
+	<h:outputText value="#{conseiller}"></h:outputText>
+	<h:outputText value="#{listeClient}"></h:outputText>
 	
 	<ui:composition template="/template/layout.xhtml">
 		<ui:define name="navDirecteur"></ui:define>
